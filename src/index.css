@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* সবকিছু.com Design System - Modern Bengali E-commerce */
+
+@layer base {
+  :root {
+    /* Beautiful Color Palette */
+    --background: 120 20% 98%;
+    --foreground: 120 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 120 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 15% 15%;
+
+    /* Primary Brand Colors - Modern Green */
+    --primary: 144 61% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 144 70% 45%;
+
+    /* Secondary Brand Colors - Vibrant Yellow */
+    --secondary: 48 96% 53%;
+    --secondary-foreground: 120 15% 15%;
+
+    --muted: 120 20% 96%;
+    --muted-foreground: 120 10% 50%;
+
+    --accent: 144 30% 90%;
+    --accent-foreground: 144 61% 35%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success & Warning Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 25 95% 53%;
+    --warning-foreground: 120 15% 15%;
+
+    --border: 120 20% 90%;
+    --input: 120 20% 95%;
+    --ring: 144 61% 35%;
+
+    --radius: 0.75rem;
+
+    /* Beautiful Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(144, 61%, 35%), hsl(144, 70%, 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(48, 96%, 53%), hsl(45, 100%, 60%));
+    --gradient-subtle: linear-gradient(135deg, hsl(120, 20%, 98%), hsl(120, 30%, 96%));
+
+    /* Elegant Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(144 61% 35% / 0.3);
+    --shadow-glow: 0 0 40px hsl(144 70% 45% / 0.4);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 120 15% 25%;
+    --sidebar-primary: 144 61% 35%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 120 20% 95%;
+    --sidebar-accent-foreground: 144 61% 35%;
+    --sidebar-border: 120 20% 90%;
+    --sidebar-ring: 144 61% 35%;
+  }
+
+  .dark {
+    /* Dark Theme - Premium Feel */
+    --background: 144 30% 8%;
+    --foreground: 120 15% 90%;
+
+    --card: 144 25% 12%;
+    --card-foreground: 120 15% 90%;
+
+    --popover: 144 25% 12%;
+    --popover-foreground: 120 15% 90%;
+
+    --primary: 144 70% 55%;
+    --primary-foreground: 144 30% 8%;
+    --primary-glow: 144 80% 65%;
+
+    --secondary: 48 96% 60%;
+    --secondary-foreground: 144 30% 8%;
+
+    --muted: 144 20% 15%;
+    --muted-foreground: 120 10% 65%;
+
+    --accent: 144 25% 18%;
+    --accent-foreground: 144 70% 55%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 25 90% 60%;
+    --warning-foreground: 144 30% 8%;
+
+    --border: 144 20% 18%;
+    --input: 144 20% 15%;
+    --ring: 144 70% 55%;
+
+    /* Dark Mode Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(144, 70%, 45%), hsl(144, 80%, 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(48, 96%, 60%), hsl(45, 100%, 70%));
+    --gradient-subtle: linear-gradient(135deg, hsl(144, 30%, 8%), hsl(144, 25%, 12%));
+
+    /* Dark Mode Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(144 70% 35% / 0.5);
+    --shadow-glow: 0 0 40px hsl(144 80% 55% / 0.3);
+
+    --sidebar-background: 144 25% 10%;
+    --sidebar-foreground: 120 15% 85%;
+    --sidebar-primary: 144 70% 55%;
+    --sidebar-primary-foreground: 144 30% 8%;
+    --sidebar-accent: 144 20% 15%;
+    --sidebar-accent-foreground: 144 70% 55%;
+    --sidebar-border: 144 20% 18%;
+    --sidebar-ring: 144 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-hind;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Modern Button Variants */
+  .btn-primary {
+    @apply bg-gradient-primary text-primary-foreground shadow-elegant hover:shadow-glow transition-all duration-300 hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-secondary text-secondary-foreground shadow-elegant hover:shadow-glow transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-ghost {
+    @apply bg-card/50 backdrop-blur-sm border border-border text-card-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300;
+  }
+
+  /* Modern Card Styles */
+  .card-modern {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 shadow-elegant hover:shadow-glow transition-all duration-300 hover:scale-[1.02];
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+
+  /* Floating Animation */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Glow Effect */
+  .glow-effect {
+    @apply shadow-glow animate-glow;
+  }
+}
