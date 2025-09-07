@@ -1,23 +1,654 @@
-<!doctype html>
-<html lang="bn">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>সবকিছু.com – এক ক্লিকে সবকিছু।</title>
-    <meta name="description" content="সবকিছু.com - বাংলাদেশের সেরা অনলাইন শপিং প্ল্যাটফর্ম। এক ক্লিকেই পাবেন সব প্রয়োজনীয় পণ্য।" />
-    <meta name="author" content="সবকিছু.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="bn" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>সবকিছু.com – এক ক্লিকে সবকিছু।</title>
+  <meta name="description" content="সবকিছু.com - বাংলাদেশের সেরা অনলাইন শপিং প্ল্যাটফর্ম। এক ক্লিকেই পাবেন সব প্রয়োজনীয় পণ্য।" />
+  <meta name="author" content="সবকিছু.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta property="og:title" content="সবকিছু.com – এক ক্লিকে সবকিছু।" />
+  <meta property="og:description" content="বাংলাদেশের সেরা অনলাইন শপিং প্ল্যাটফর্ম। এক ক্লিকেই পাবেন সব প্রয়োজনীয় পণ্য।" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@shobkichuofficial" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: { 'hind': ['Hind Siliguri', 'sans-serif'], },
+          colors: {
+            border: "hsl(var(--border))",
+            input: "hsl(var(--input))",
+            ring: "hsl(var(--ring))",
+            background: "hsl(var(--background))",
+            foreground: "hsl(var(--foreground))",
+            primary: {
+              DEFAULT: "hsl(var(--primary))",
+              foreground: "hsl(var(--primary-foreground))",
+              glow: "hsl(var(--primary-glow))",
+            },
+            secondary: {
+              DEFAULT: "hsl(var(--secondary))",
+              foreground: "hsl(var(--secondary-foreground))",
+            },
+            destructive: {
+              DEFAULT: "hsl(var(--destructive))",
+              foreground: "hsl(var(--destructive-foreground))",
+            },
+            muted: {
+              DEFAULT: "hsl(var(--muted))",
+              foreground: "hsl(var(--muted-foreground))",
+            },
+            accent: {
+              DEFAULT: "hsl(var(--accent))",
+              foreground: "hsl(var(--accent-foreground))",
+            },
+            popover: {
+              DEFAULT: "hsl(var(--popover))",
+              foreground: "hsl(var(--popover-foreground))",
+            },
+            card: {
+              DEFAULT: "hsl(var(--card))",
+              foreground: "hsl(var(--card-foreground))",
+            },
+            success: {
+              DEFAULT: "hsl(var(--success))",
+              foreground: "hsl(var(--success-foreground))",
+            },
+            warning: {
+              DEFAULT: "hsl(var(--warning))",
+              foreground: "hsl(var(--warning-foreground))",
+            },
+          },
+          backgroundImage: {
+            'gradient-primary': 'var(--gradient-primary)',
+            'gradient-secondary': 'var(--gradient-secondary)',
+            'gradient-subtle': 'var(--gradient-subtle)',
+          },
+          boxShadow: {
+            'glow': 'var(--shadow-glow)',
+            'elegant': 'var(--shadow-elegant)',
+          },
+          borderRadius: {
+            lg: "var(--radius)",
+            md: "calc(var(--radius) - 2px)",
+            sm: "calc(var(--radius) - 4px)",
+          },
+          keyframes: {
+            "fade-in": {
+              "0%": { opacity: "0", transform: "translateY(20px)" },
+              "100%": { opacity: "1", transform: "translateY(0)" }
+            },
+            "scale-in": {
+              "0%": { transform: "scale(0.95)", opacity: "0" },
+              "100%": { transform: "scale(1)", opacity: "1" }
+            },
+            "slide-up": {
+              "0%": { transform: "translateY(100%)", opacity: "0" },
+              "100%": { transform: "translateY(0)", opacity: "1" }
+            },
+            "glow": {
+              "0%, 100%": { boxShadow: "0 0 20px hsl(var(--primary) / 0.3)" },
+              "50%": { boxShadow: "0 0 40px hsl(var(--primary) / 0.6)" }
+            },
+            "float": {
+              "0%, 100%": { transform: "translateY(0px)" },
+              "50%": { transform: "translateY(-10px)" }
+            }
+          },
+          animation: {
+            "fade-in": "fade-in 0.5s ease-out",
+            "scale-in": "scale-in 0.3s ease-out",
+            "slide-up": "slide-up 0.4s ease-out",
+            "glow": "glow 2s ease-in-out infinite",
+            "float": "float 3s ease-in-out infinite",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --background: 120 20% 98%;
+      --foreground: 120 15% 15%;
+      --card: 0 0% 100%;
+      --card-foreground: 120 15% 15%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 120 15% 15%;
+      --primary: 144 61% 35%;
+      --primary-foreground: 0 0% 100%;
+      --primary-glow: 144 70% 45%;
+      --secondary: 48 96% 53%;
+      --secondary-foreground: 120 15% 15%;
+      --muted: 120 20% 96%;
+      --muted-foreground: 120 10% 50%;
+      --accent: 144 30% 90%;
+      --accent-foreground: 144 61% 35%;
+      --destructive: 0 84% 60%;
+      --destructive-foreground: 0 0% 100%;
+      --success: 142 76% 36%;
+      --success-foreground: 0 0% 100%;
+      --warning: 25 95% 53%;
+      --warning-foreground: 120 15% 15%;
+      --border: 120 20% 90%;
+      --input: 120 20% 95%;
+      --ring: 144 61% 35%;
+      --radius: 0.75rem;
+      --gradient-primary: linear-gradient(135deg, hsl(144, 61%, 35%), hsl(144, 70%, 45%));
+      --gradient-secondary: linear-gradient(135deg, hsl(48, 96%, 53%), hsl(45, 100%, 60%));
+      --gradient-subtle: linear-gradient(135deg, hsl(120, 20%, 98%), hsl(120, 30%, 96%));
+      --shadow-elegant: 0 10px 30px -10px hsl(144 61% 35% / 0.3);
+      --shadow-glow: 0 0 40px hsl(144 70% 45% / 0.4);
+    }
+    .dark {
+      --background: 144 30% 8%;
+      --foreground: 120 15% 90%;
+      --card: 144 25% 12%;
+      --card-foreground: 120 15% 90%;
+      --popover: 144 25% 12%;
+      --popover-foreground: 120 15% 90%;
+      --primary: 144 70% 55%;
+      --primary-foreground: 144 30% 8%;
+      --primary-glow: 144 80% 65%;
+      --secondary: 48 96% 60%;
+      --secondary-foreground: 144 30% 8%;
+      --muted: 144 20% 15%;
+      --muted-foreground: 120 10% 65%;
+      --accent: 144 25% 18%;
+      --accent-foreground: 144 70% 55%;
+      --destructive: 0 75% 55%;
+      --destructive-foreground: 0 0% 100%;
+      --success: 142 70% 45%;
+      --success-foreground: 0 0% 100%;
+      --warning: 25 90% 60%;
+      --warning-foreground: 144 30% 8%;
+      --border: 144 20% 18%;
+      --input: 144 20% 15%;
+      --ring: 144 70% 55%;
+      --gradient-primary: linear-gradient(135deg, hsl(144, 70%, 45%), hsl(144, 80%, 55%));
+      --gradient-secondary: linear-gradient(135deg, hsl(48, 96%, 60%), hsl(45, 100%, 70%));
+      --gradient-subtle: linear-gradient(135deg, hsl(144, 30%, 8%), hsl(144, 25%, 12%));
+      --shadow-elegant: 0 10px 30px -10px hsl(144 70% 35% / 0.5);
+      --shadow-glow: 0 0 40px hsl(144 80% 55% / 0.3);
+    }
+    * { border-color: hsl(var(--border)); }
+    body { background-color: hsl(var(--background)); color: hsl(var(--foreground)); font-family: 'Hind Siliguri', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
+    html { scroll-behavior: smooth; }
+    .btn-primary { background-image: var(--gradient-primary); color: hsl(var(--primary-foreground)); box-shadow: var(--shadow-elegant); transition: all 0.3s; }
+    .btn-primary:hover:not(:disabled) { box-shadow: var(--shadow-glow); transform: scale(1.05); }
+    .btn-ghost { background-color: hsla(var(--card) / 0.5); backdrop-filter: blur(4px); border: 1px solid hsl(var(--border)); color: hsl(var(--card-foreground)); transition: all 0.3s; }
+    .btn-ghost:hover { background-color: hsl(var(--accent)); color: hsl(var(--accent-foreground)); }
+    .card-modern { background-color: hsla(var(--card) / 0.8); backdrop-filter: blur(4px); border: 1px solid hsla(var(--border) / 0.5); box-shadow: var(--shadow-elegant); transition: all 0.3s; }
+    .card-modern:hover { box-shadow: var(--shadow-glow); transform: scale(1.02); }
+    .text-gradient { background-image: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .float-animation { animation: float 6s ease-in-out infinite; }
+    .modal-overlay { position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.7); backdrop-filter: blur(2px); display: flex; align-items: center; justify-content: center; z-index: 100; transition: opacity 0.3s; }
+    .modal-content { transition: transform 0.3s, opacity 0.3s; }
+    .modal-overlay.hidden { opacity: 0; pointer-events: none; }
+    .modal-overlay.hidden .modal-content { transform: scale(0.95); opacity: 0; }
+    .toast { position: fixed; bottom: 20px; right: 20px; background-color: hsl(var(--card)); color: hsl(var(--card-foreground)); padding: 12px 20px; border-radius: 0.75rem; box-shadow: var(--shadow-elegant); z-index: 101; transition: opacity 0.3s, transform 0.3s; transform: translateY(100px); opacity: 0; pointer-events: none; }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .toast.destructive { background-color: hsl(var(--destructive)); color: hsl(var(--destructive-foreground)); }
+    button:disabled { opacity: 0.7; cursor: not-allowed; }
+    input, label, button { font-family: 'Hind Siliguri', sans-serif; }
+  </style>
+</head>
+<body class="min-h-screen bg-background relative overflow-x-hidden">
+  <!-- Background -->
+  <div class="fixed inset-0 opacity-5 pointer-events-none" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"></div>
+  <div id="app-root">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-elegant">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <div class="relative">
+              <img src="assets/logo_3.jpg" alt="সবকিছু.com Logo" class="w-16 h-16 rounded-full shadow-elegant float-animation" />
+            </div>
+            <div class="hidden sm:block">
+              <h1 class="text-2xl font-bold text-gradient">সবকিছু.com</h1>
+              <p class="text-sm text-muted-foreground">এক ক্লিকে সবকিছু।</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="hidden md:flex items-center gap-3">
+              <a href="https://www.facebook.com/share/16sSjnvbCa/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="p-2 rounded-full hover:bg-accent hover:text-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+              <a href="https://www.instagram.com/shobkichuofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="p-2 rounded-full hover:bg-accent hover:text-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+              <a href="mailto:shobkichuofficial@gmail.com" aria-label="Email" class="p-2 rounded-full hover:bg-accent hover:text-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+            </div>
+            <button id="theme-toggle-btn" class="p-2 rounded-full hover:bg-accent hover:text-primary transition-colors">
+              <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+              <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <button id="cart-btn" class="relative p-2 rounded-full hover:bg-accent hover:text-primary transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              <span id="cart-item-count" class="absolute -top-1 -right-1 bg-secondary text-secondary-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center animate-scale-in hidden">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <main>
+      <section class="py-16 text-center animate-fade-in">
+        <span class="inline-block bg-secondary text-secondary-foreground mb-6 px-8 py-3 text-lg font-medium rounded-lg animate-scale-in">স্বাগতম</span>
+        <h1 class="text-5xl md:text-6xl font-bold text-gradient mb-4 animate-slide-up">সবকিছু.com</h1>
+        <p class="text-xl text-muted-foreground mb-8 animate-fade-in">এক ক্লিকে সবকিছু। 🛒</p>
+      </section>
+      <!-- Products -->
+      <section id="products-section" class="py-16">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="text-center mb-12">
+            <span class="inline-block bg-secondary text-secondary-foreground mb-4 px-6 py-2 text-lg rounded-lg">📦 আমাদের পণ্যসমূহ 📦</span>
+            <h2 class="text-4xl font-bold text-gradient">বিশেষ অফার</h2>
+          </div>
+          <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"></div>
+        </div>
+      </section>
+      <!-- About & Footer sections: same as inde.html -->
+      <section class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <span class="inline-block bg-secondary text-secondary-foreground mb-4 px-6 py-2 text-lg rounded-lg">আমাদের সম্পর্কে</span>
+            <h2 class="text-4xl font-bold text-gradient mb-6">সবকিছু.com – আমাদের সম্পর্কে</h2>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+              <div class="space-y-4">
+                <p class="text-lg text-foreground leading-relaxed"><strong>সবকিছু.com</strong> একটি অনলাইন প্ল্যাটফর্ম যেখানে এক ক্লিকেই পাওয়া যায় আপনার দৈনন্দিন জীবনের সব প্রয়োজনীয় জিনিস।</p>
+                <p class="text-muted-foreground leading-relaxed">আমরা বিশ্বাস করি – সময়ের সঠিক ব্যবহার আর বিশুদ্ধ পণ্যের নিশ্চয়তা দিতে পারলেই গ্রাহকের জীবনে স্বাচ্ছন্দ্য আসে।</p>
+              </div>
+              <div class="space-y-4">
+                <h3 class="text-xl font-bold text-foreground">আমাদের বৈশিষ্ট্য</h3>
+                <div class="space-y-3">
+                  <div class="flex items-start gap-3"><div class="w-8 h-8 bg-success/10 rounded-full flex items-center justify-center mt-0.5"><span class="text-success"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div><span class="text-foreground leading-relaxed">সবকিছু এক জায়গায় – বাজার থেকে স্বাস্থ্যকর গ্রোসারি</span></div>
+                  <div class="flex items-start gap-3"><div class="w-8 h-8 bg-success/10 rounded-full flex items-center justify-center mt-0.5"><span class="text-success"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span></div><span class="text-foreground leading-relaxed">100% খাঁটি ও বাছাইকৃত পণ্য</span></div>
+                  <div class="flex items-start gap-3"><div class="w-8 h-8 bg-success/10 rounded-full flex items-center justify-center mt-0.5"><span class="text-success"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></span></div><span class="text-foreground leading-relaxed">গ্রাহকের বিশ্বাস ও সন্তুষ্টি আমাদের প্রথম অগ্রাধিকার</span></div>
+                  <div class="flex items-start gap-3"><div class="w-8 h-8 bg-success/10 rounded-full flex items-center justify-center mt-0.5"><span class="text-success"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></span></div><span class="text-foreground leading-relaxed">সহজ অর্ডার, দ্রুত ডেলিভারি</span></div>
+                </div>
+              </div>
+              <div class="p-6 bg-gradient-subtle rounded-xl border border-border/50">
+                <p class="text-foreground leading-relaxed"><strong>সবকিছু.com</strong>-এর মূল লক্ষ্য — আধুনিক প্রযুক্তিকে কাজে লাগিয়ে মানুষের জীবনকে সহজ করা। আমরা চাই, আপনার কেনাকাটা হোক ঝামেলাহীন, নিরাপদ ও আনন্দদায়ক।</p>
+              </div>
+              <div class="text-center p-6 bg-gradient-primary text-primary-foreground rounded-xl">
+                <p class="text-xl font-bold">👉 কারণ, "যা দরকার, তাই পাবেন – সবকিছু.com"</p>
+              </div>
+            </div>
+            <div class="space-y-6">
+              <div class="card-modern"><div class="p-6"><div class="flex items-start gap-4"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"><span class="text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span></div><div class="space-y-2"><h4 class="text-lg font-bold text-foreground">গুণমান নিশ্চয়তা</h4><p class="text-muted-foreground leading-relaxed">প্রতিটি পণ্য কঠোর মান নিয়ন্ত্রণের মধ্য দিয়ে পরীক্ষিত</p></div></div></div></div>
+              <div class="card-modern"><div class="p-6"><div class="flex items-start gap-4"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"><span class="text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span></div><div class="space-y-2"><h4 class="text-lg font-bold text-foreground">নিরাপদ কেনাকাটা</h4><p class="text-muted-foreground leading-relaxed">সুরক্ষিত পেমেন্ট ও ব্যক্তিগত তথ্যের গোপনীয়তা</p></div></div></div></div>
+              <div class="card-modern"><div class="p-6"><div class="flex items-start gap-4"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"><span class="text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></span></div><div class="space-y-2"><h4 class="text-lg font-bold text-foreground">দ্রুত ডেলিভারি</h4><p class="text-muted-foreground leading-relaxed">সারা বাংলাদেশে দ্রুততম ডেলিভারি সেবা</p></div></div></div></div>
+              <div class="card-modern bg-gradient-secondary text-secondary-foreground"><div class="p-6"><div class="grid grid-cols-2 gap-6 text-center"><div><div class="text-2xl font-bold">৫০০+</div><div class="text-sm opacity-90">সন্তুষ্ট গ্রাহক</div></div><div><div class="text-2xl font-bold">৯৮%</div><div class="text-sm opacity-90">পণ্যের গুণমান</div></div></div></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gradient-subtle border-t border-border mt-16"><div class="max-w-6xl mx-auto px-4 py-12"><div class="card-modern"><div class="p-8"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="space-y-4"><h3 class="text-2xl font-bold text-gradient">সবকিছু.com</h3><p class="text-muted-foreground leading-relaxed">বাংলাদেশের সেরা অনলাইন শপিং প্ল্যাটফর্ম। এক ক্লিকেই পাবেন সব প্রয়োজনীয় পণ্য।</p><div class="flex items-center gap-2 text-sm text-muted-foreground"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>গোপালগঞ্জ, বাংলাদেশ</span></div></div><div class="space-y-4"><h4 class="text-lg font-bold text-foreground">যোগাযোগ করুন</h4><div class="space-y-3"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><rect x="2" y="4" width="20" height="16" rx="2"></rect><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:shobkichuofficial@gmail.com" class="text-muted-foreground hover:text-primary transition-colors">shobkichuofficial@gmail.com</a></div><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span class="text-muted-foreground">+8809638180218</span></div></div></div><div class="space-y-4"><h4 class="text-lg font-bold text-foreground">সোশ্যাল মিডিয়া</h4><div class="space-y-3"><a href="https://www.facebook.com/share/16sSjnvbCa/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2 hover:bg-accent rounded-md"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg><span class="text-muted-foreground">Facebook Page</span></a><a href="https://www.instagram.com/shobkichuofficial/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2 hover:bg-accent rounded-md"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-600"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg><span class="text-muted-foreground">Instagram</span></a><a href="mailto:shobkichuofficial@gmail.com" class="flex items-center gap-3 p-2 hover:bg-accent rounded-md"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-600"><rect x="2" y="4" width="20" height="16" rx="2"></rect><polyline points="22,6 12,13 2,6"></polyline></svg><span class="text-muted-foreground">Email</span></a></div></div></div><div class="mt-8 pt-8 border-t border-border"><div class="flex flex-col md:flex-row items-center justify-between gap-4"><p class="text-sm text-muted-foreground text-center md:text-left">&copy; 2024 সবকিছু.com. সকল অধিকার সংরক্ষিত।</p><div class="flex items-center gap-4 text-sm text-muted-foreground"><span>🌐 shobkichuofficial.github.io</span></div></div></div></div></div></div></footer>
+  </div>
+  <div id="modals-container"></div>
+  <div id="toast" class="toast"><div class="font-bold" id="toast-title"></div><div id="toast-description"></div></div>
+  <script>
+    // --- Product Data ---
+    const PRODUCTS = [
+      {
+        id: "balachao_150g",
+        name: "Suddho Deal চিংড়ি বালাচাও (150 গ্রাম)",
+        price: 195,
+        image: "assets/prodact_1.jpg",
+        description: "ঝালের স্বাদ আর খাঁটি চিংড়ির অনন্য সংমিশ্রণ। ঘরে বসেই অর্ডার করুন।",
+        features: ["ফ্রেশ ড্রাই চিংড়ি", "আসল মসলা", "ঝাঁজালো স্বাদ", "হোমমেড ফ্লেভার", "100% হালাল"]
+      },
+      {
+        id: "balachao_250g",
+        name: "Suddho Deal চিংড়ি বালাচাও (250 গ্রাম)",
+        price: 310,
+        image: "assets/prodact_1.jpg",
+        description: "বড় প্যাক, বড় স্বাদ। পরিবারের জন্য উপযুক্ত। ঘরে বসেই অর্ডার করুন।",
+        features: ["ফ্রেশ ড্রাই চিংড়ি", "আসল মসলা", "ঝাঁজালো স্বাদ", "হোমমেড ফ্লেভার", "100% হালাল"]
+      }
+    ];
+    // --- App State ---
+    let CART = [];
+    let SELECTED_PRODUCT = null;
 
-    <meta property="og:title" content="সবকিছু.com – এক ক্লিকে সবকিছু।" />
-    <meta property="og:description" content="বাংলাদেশের সেরা অনলাইন শপিং প্ল্যাটফর্ম। এক ক্লিকেই পাবেন সব প্রয়োজনীয় পণ্য।" />
-    <meta property="og:type" content="website" />
+    // --- DOM References ---
+    const productGrid = document.getElementById('product-grid');
+    const cartBtn = document.getElementById('cart-btn');
+    const cartItemCountEl = document.getElementById('cart-item-count');
+    const modalsContainer = document.getElementById('modals-container');
+    const toastEl = document.getElementById('toast');
+    const toastTitleEl = document.getElementById('toast-title');
+    const toastDescriptionEl = document.getElementById('toast-description');
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const themeIconSun = document.getElementById('theme-icon-sun');
+    const themeIconMoon = document.getElementById('theme-icon-moon');
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@shobkichuofficial" />
-  </head>
+    // --- Utility ---
+    function showToast(title, description, variant = 'default') {
+      toastTitleEl.textContent = title;
+      toastDescriptionEl.textContent = description;
+      toastEl.classList.remove('destructive');
+      if (variant === 'destructive') toastEl.classList.add('destructive');
+      toastEl.classList.add('show');
+      setTimeout(() => { toastEl.classList.remove('show'); }, 3500);
+    }
+    function openModal(html) {
+      const w = document.createElement('div');
+      w.innerHTML = html;
+      modalsContainer.appendChild(w.firstElementChild);
+      setTimeout(() => modalsContainer.lastElementChild.classList.remove('hidden'), 10);
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(modalEl) {
+      modalEl.classList.add('hidden');
+      setTimeout(() => {
+        modalEl.remove();
+        if (modalsContainer.children.length === 0) document.body.style.overflow = '';
+      }, 300);
+    }
+    function updateCartCount() {
+      const count = CART.reduce((s, i) => s + i.quantity, 0);
+      cartItemCountEl.textContent = count;
+      cartItemCountEl.classList.toggle('hidden', count === 0);
+    }
+    function getCartItem(id) {
+      return CART.find(i => i.id === id);
+    }
+    function renderProducts() {
+      productGrid.innerHTML = PRODUCTS.map(p => `
+      <div class="card-modern group cursor-pointer overflow-hidden animate-fade-in" data-product-id="${p.id}">
+        <div class="p-0">
+          <div class="relative overflow-hidden" data-action="preview">
+            <img src="${p.image}" alt="${p.name}" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <button class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-secondary text-secondary-foreground text-sm px-3 py-1 rounded-md flex items-center gap-1" data-action="preview">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              দেখুন
+            </button>
+          </div>
+          <div class="p-6">
+            <div class="space-y-4">
+              <div>
+                <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">${p.name}</h3>
+                <div class="flex items-center justify-between mt-2">
+                  <span class="bg-gradient-secondary text-secondary-foreground font-bold text-lg px-3 py-1 rounded-md">৳${p.price}</span>
+                  <span class="text-sm text-green-600 font-medium">স্টকে আছে</span>
+                </div>
+              </div>
+              <div class="space-y-2">
+                ${p.features.map(f => `<div class="flex items-center gap-2 text-sm text-muted-foreground"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500 flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg><span>${f}</span></div>`).join('')}
+              </div>
+              <div class="flex gap-2 pt-2">
+                <button class="btn-primary flex-1 py-3 px-4 rounded-md text-base" data-action="order">অর্ডার করুন</button>
+                <button class="btn-ghost py-3 px-4 rounded-md text-base flex items-center justify-center gap-1" data-action="add_to_cart">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                  কার্ট
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      `).join('');
+    }
+    function renderPreviewModal(product) {
+      return `
+      <div class="modal-overlay hidden" data-product-id="${product.id}">
+        <div class="modal-content card-modern max-w-4xl w-full max-h-[90vh] overflow-y-auto m-4 rounded-lg">
+          <div class="p-6">
+            <h2 class="text-2xl font-bold text-gradient mb-4">পণ্যের বিস্তারিত</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div class="space-y-4">
+                <div class="relative overflow-hidden rounded-xl">
+                  <img src="${product.image}" alt="${product.name}" class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute top-4 left-4"><span class="bg-success text-success-foreground text-xs px-2 py-1 rounded-md">স্টকে আছে</span></div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-yellow-400"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-yellow-400"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-yellow-400"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-yellow-400"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-yellow-400"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                  </div>
+                  <span class="text-sm text-muted-foreground">(৪.৮ রেটিং)</span>
+                </div>
+              </div>
+              <div class="space-y-6">
+                <div>
+                  <h2 class="text-2xl font-bold text-foreground mb-3">${product.name}</h2>
+                  <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-gradient-secondary text-secondary-foreground font-bold text-xl px-4 py-2 rounded-md">৳${product.price}</span>
+                    <span class="text-sm text-muted-foreground line-through">৳${Math.round(product.price * 1.2)}</span>
+                    <span class="bg-destructive text-destructive-foreground text-xs px-2 py-1 rounded-md">২০% ছাড়</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-foreground mb-2">বিবরণ</h3>
+                  <p class="text-muted-foreground leading-relaxed">${product.description}</p>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-foreground mb-3">বৈশিষ্ট্যসমূহ</h3>
+                  <div class="space-y-3">${product.features.map(f => `<div class="flex items-center gap-3"><div class="w-6 h-6 bg-success/10 rounded-full flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-success"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="text-foreground">${f}</span></div>`).join('')}</div>
+                </div>
+                <div class="p-4 bg-gradient-subtle rounded-lg border border-border/50">
+                  <h4 class="font-semibold text-foreground mb-2">গুণগত মানের নিশ্চয়তা</h4>
+                  <ul class="text-sm text-muted-foreground space-y-1">
+                    <li>✓ 100% খাঁটি ও প্রাকৃতিক উপাদান</li>
+                    <li>✓ হালাল সার্টিফাইড</li>
+                    <li>✓ দ্রুত ডেলিভারি নিশ্চয়তা</li>
+                  </ul>
+                </div>
+                <div class="flex gap-4 pt-4">
+                  <button data-action="orderFromPreview" class="btn-primary flex-1 text-lg py-3 rounded-md">এখনই অর্ডার করুন</button>
+                  <button data-action="addToCartFromPreview" class="btn-ghost flex-1 text-lg py-3 rounded-md flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    কার্টে যোগ করুন
+                  </button>
+                </div>
+                <div class="text-center text-sm text-muted-foreground pt-4 border-t border-border">
+                  <p>সরাসরি অর্ডার করতে কল করুন: <span class="font-bold text-primary">+8809638180218</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }
+    function renderOrderModal(product, quantity) {
+      const productTotal = product.price * quantity;
+      return `
+      <div class="modal-overlay hidden" id="order-modal">
+        <div class="modal-content card-modern max-w-2xl w-full max-h-[90vh] overflow-y-auto m-4 rounded-lg">
+        <div class="p-6 space-y-6"><h2 class="text-2xl font-bold text-gradient">অর্ডার কনফার্ম করুন</h2>
+        <div class="flex gap-4 p-4 bg-muted/30 rounded-lg"><img src="${product.image}" alt="${product.name}" class="w-20 h-20 object-cover rounded-lg" /><div class="flex-1"><h4 class="font-bold text-foreground">${product.name}</h4><p class="text-success font-bold">৳${product.price}</p></div></div>
+        <form id="single-order-form" class="space-y-4"><div class="space-y-2"><label class="text-sm font-medium">পরিমাণ</label><div class="flex items-center gap-3"><button type="button" size="icon" id="single-qty-dec-btn" data-action="dec-single-qty" class="h-8 w-8 border rounded-md flex items-center justify-center">-</button><span id="quantity-value" class="w-12 text-center text-lg font-medium">${quantity}</span><button type="button" size="icon" data-action="inc-single-qty" class="h-8 w-8 border rounded-md flex items-center justify-center">+</button><span id="product-subtotal" class="ml-4 text-sm text-muted-foreground">সাবটোটাল: ৳${productTotal}</span></div></div><hr/>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="space-y-2"><label for="customerName" class="text-sm font-medium">আপনার নাম *</label><input type="text" id="customerName" name="customerName" required placeholder="নাম লিখুন" class="w-full p-2 border rounded-md bg-input" /></div><div class="space-y-2"><label for="phoneNumber" class="text-sm font-medium">ফোন নম্বর *</label><input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="০১৭xxxxxxxx" class="w-full p-2 border rounded-md bg-input" /></div></div>
+        <div class="space-y-2"><label for="address" class="text-sm font-medium">সম্পূর্ণ ঠিকানা *</label><input type="text" id="address" name="address" required placeholder="বিস্তারিত ঠিকানা লিখুন" class="w-full p-2 border rounded-md bg-input" /></div>
+        <div class="space-y-3"><label class="text-sm font-medium">ডেলিভারি এলাকা নির্বাচন করুন *</label><div class="space-y-2"><div class="flex items-center space-x-2 p-3 border rounded-lg hover:bg-accent/50 transition-colors"><input type="radio" value="inside" id="order-inside" name="deliveryLocation" class="cursor-pointer"/><label for="order-inside" class="flex-1 cursor-pointer">গোপালগঞ্জ জেলার ভিতরে (৳৫০)</label></div><div class="flex items-center space-x-2 p-3 border rounded-lg hover:bg-accent/50 transition-colors"><input type="radio" value="outside" id="order-outside" name="deliveryLocation" class="cursor-pointer"/><label for="order-outside" class="flex-1 cursor-pointer">অন্যান্য জেলায় (৳১৩০)</label></div></div></div><hr/>
+        <div class="space-y-2 p-4 bg-gradient-subtle rounded-lg"><div id="delivery-charge-row" class="flex justify-between text-sm" style="display: none;"><span>ডেলিভারি চার্জ:</span><span id="delivery-charge">৳0</span></div><hr/><div class="flex justify-between text-lg font-bold text-gradient"><span>মোট:</span><span id="total-amount">৳${productTotal}</span></div></div>
+        <button type="submit" class="w-full btn-primary text-lg py-3 rounded-md">অর্ডার কনফার্ম করুন</button></form></div></div></div>`;
+    }
+    function renderCartModal() {
+      const subtotal = CART.reduce((s, i) => s + i.price * i.quantity, 0);
+      return `
+      <div class="modal-overlay hidden" id="cart-modal">
+        <div class="modal-content card-modern max-w-2xl w-full max-h-[90vh] overflow-y-auto m-4 rounded-lg">
+        <div class="p-6 space-y-6"><h2 class="text-2xl font-bold text-gradient">আপনার শপিং কার্ট</h2>
+        ${CART.length === 0 ? `<div class="text-center py-12"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto text-muted-foreground mb-4"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg><h3 class="text-lg font-medium text-foreground mb-2">আপনার কার্ট খালি</h3><p class="text-muted-foreground">কেনাকাটা শুরু করতে পণ্য যোগ করুন</p></div>` :
+          `<div class="space-y-4">${CART.map(i => `<div class="flex items-center justify-between p-4 bg-muted/30 rounded-lg" data-item-id="${i.id}"><div class="flex-1"><h4 class="font-medium text-foreground">${i.name}</h4><p class="text-sm text-muted-foreground">৳${i.price} প্রতিটি</p></div><div class="flex items-center gap-3"><div class="flex items-center gap-2"><button data-action="dec-qty" class="h-8 w-8 border rounded-md flex items-center justify-center">-</button><span id="item-qty" class="w-8 text-center font-medium">${i.quantity}</span><button data-action="inc-qty" class="h-8 w-8 border rounded-md flex items-center justify-center">+</button></div><div class="w-20 text-right"><span id="item-total" class="font-bold">৳${i.price * i.quantity}</span></div><button data-action="remove-item" class="h-8 w-8 text-destructive hover:text-destructive flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></button></div></div>`).join('')}</div><hr/>
+          <form id="cart-order-form" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="space-y-2"><label for="customerName" class="text-sm font-medium">আপনার নাম *</label><input type="text" id="customerName" name="customerName" required placeholder="নাম লিখুন" class="w-full p-2 border rounded-md bg-input" /></div><div class="space-y-2"><label for="phoneNumber" class="text-sm font-medium">ফোন নম্বর *</label><input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="০১৭xxxxxxxx" class="w-full p-2 border rounded-md bg-input" /></div></div>
+            <div class="space-y-2"><label for="address" class="text-sm font-medium">সম্পূর্ণ ঠিকানা *</label><input type="text" id="address" name="address" required placeholder="বিস্তারিত ঠিকানা লিখুন" class="w-full p-2 border rounded-md bg-input" /></div>
+            <div class="space-y-3"><label class="text-sm font-medium">ডেলিভারি এলাকা নির্বাচন করুন *</label><div class="space-y-2"><div class="flex items-center space-x-2 p-3 border rounded-lg hover:bg-accent/50 transition-colors"><input type="radio" value="inside" id="cart-inside" name="deliveryLocation" class="cursor-pointer"/><label for="cart-inside" class="flex-1 cursor-pointer">গোপালগঞ্জ জেলার ভিতরে (৳৫০)</label></div><div class="flex items-center space-x-2 p-3 border rounded-lg hover:bg-accent/50 transition-colors"><input type="radio" value="outside" id="cart-outside" name="deliveryLocation" class="cursor-pointer"/><label for="cart-outside" class="flex-1 cursor-pointer">অন্যান্য জেলায় (৳১৩০)</label></div></div></div><hr/>
+            <div class="space-y-2 p-4 bg-gradient-subtle rounded-lg"><div class="flex justify-between text-sm"><span>সাবটোটাল:</span><span id="cart-subtotal">৳${subtotal}</span></div><div id="delivery-charge-row" class="flex justify-between text-sm" style="display: none;"><span>ডেলিভারি চার্জ:</span><span id="delivery-charge">৳0</span></div><hr/><div class="flex justify-between text-lg font-bold text-gradient"><span>মোট:</span><span id="total-amount">৳${subtotal}</span></div></div>
+            <button type="submit" class="w-full btn-primary text-lg py-3 rounded-md">অর্ডার কনফার্ম করুন</button>
+          </form></div>`}
+        </div></div>
+      </div>`;
+    }
+    function getThankYouModalHTML() {
+      return `
+      <div class="modal-overlay flex items-center justify-center p-4">
+        <div class="modal-content card-modern max-w-md w-full text-center py-8 px-6">
+          <div class="mx-auto w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mb-4"> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-success"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg> </div>
+          <h3 class="text-xl font-bold text-foreground mb-2">অর্ডার সফল!</h3>
+          <p class="text-muted-foreground">আপনার অর্ডারটি গ্রহণ করা হয়েছে। আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব। 😊</p>
+        </div>
+      </div>`;
+    }
+    // --- Events + Logic ---
+    productGrid.addEventListener('click', e => {
+      const card = e.target.closest('[data-product-id]');
+      if (!card) return;
+      const productId = card.dataset.productId;
+      const product = PRODUCTS.find(p => p.id === productId);
+      SELECTED_PRODUCT = product;
+      const action = e.target.dataset.action || e.target.closest('[data-action]')?.dataset.action;
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+      if (action === 'add_to_cart') {
+        const existing = CART.find(i => i.id === product.id);
+        if (existing) existing.quantity += 1;
+        else CART.push({ id: product.id, name: product.name, price: product.price, quantity: 1 });
+        updateCartCount();
+        showToast("কার্টে যোগ হয়েছে!", `${product.name} সফলভাবে কার্টে যোগ করা হয়েছে।`);
+      } else if (action === 'order') {
+        openModal(renderOrderModal(product, 1));
+      } else if (action === 'preview') {
+        openModal(renderPreviewModal(product));
+      }
+    });
+    cartBtn.addEventListener('click', () => { openModal(renderCartModal()); });
+    modalsContainer.addEventListener('click', e => {
+      const modal = e.target.closest('.modal-overlay');
+      if (!modal) return;
+      if (e.target === modal) closeModal(modal);
+
+      const action = e.target.dataset.action || e.target.closest('[data-action]')?.dataset.action;
+      const form = e.target.closest('form');
+      // --- Cart Logic ---
+      if (form && form.id === 'cart-order-form') {
+        if (e.target.type === 'submit') {
+          e.preventDefault();
+          const deliveryLocation = form.querySelector('input[name="deliveryLocation"]:checked')?.value;
+          if (!deliveryLocation) {
+            showToast("ত্রুটি", "দয়া করে ডেলিভারি এলাকা নির্বাচন করুন।", "destructive");
+            return;
+          }
+          form.querySelector('button[type="submit"]').disabled = true;
+          setTimeout(() => {
+            closeModal(modal);
+            openModal(getThankYouModalHTML());
+            setTimeout(() => closeModal(modalsContainer.lastElementChild), 3000);
+            CART = [];
+            updateCartCount();
+            form.querySelector('button[type="submit"]').disabled = false;
+          }, 1700);
+        }
+        if (e.target.name === 'deliveryLocation') updatePriceSummary(form, 'cart');
+      }
+      if (action?.includes('qty')) {
+        const itemEl = e.target.closest('[data-item-id]');
+        const itemId = itemEl.dataset.itemId;
+        const item = CART.find(i => i.id === itemId);
+        if (!item) return;
+        if (action === 'inc-qty') item.quantity++;
+        else if (action === 'dec-qty' && item.quantity > 1) item.quantity--;
+        else if (action === 'dec-qty' && item.quantity === 1) { CART = CART.filter(i => i.id !== itemId); itemEl.remove(); }
+        itemEl.querySelector('#item-qty').textContent = item ? item.quantity : 1;
+        itemEl.querySelector('#item-total').textContent = item ? `৳${item.price * item.quantity}` : '৳0';
+        updatePriceSummary(modal.querySelector('form'), 'cart');
+        updateCartCount();
+      }
+      if (action === 'remove-item') {
+        const itemId = e.target.closest('[data-item-id]').dataset.itemId;
+        CART = CART.filter(i => i.id !== itemId);
+        e.target.closest('[data-item-id]').remove();
+        if (CART.length === 0) {
+          openModal(renderCartModal());
+          closeModal(modal);
+        }
+        updatePriceSummary(modal.querySelector('form'), 'cart');
+        updateCartCount();
+      }
+      // --- Single Order Modal Logic ---
+      if (form && form.id === 'single-order-form') {
+        if (e.target.type === 'submit') {
+          e.preventDefault();
+          const deliveryLocation = form.querySelector('input[name="deliveryLocation"]:checked')?.value;
+          if (!deliveryLocation) {
+            showToast("ত্রুটি", "দয়া করে ডেলিভারি এলাকা নির্বাচন করুন।", "destructive");
+            return;
+          }
+          form.querySelector('button[type="submit"]').disabled = true;
+          setTimeout(() => {
+            closeModal(modal);
+            openModal(getThankYouModalHTML());
+            setTimeout(() => closeModal(modalsContainer.lastElementChild), 3000);
+            form.querySelector('button[type="submit"]').disabled = false;
+          }, 1700);
+        }
+        if (e.target.name === 'deliveryLocation') updatePriceSummary(form, 'single');
+      }
+      if (action?.includes('single-qty')) {
+        const qtyEl = modal.querySelector('#quantity-value');
+        let qty = parseInt(qtyEl.textContent, 10);
+        if (action === 'inc-single-qty') qty++;
+        else if (action === 'dec-single-qty' && qty > 1) qty--;
+        qtyEl.textContent = qty;
+        modal.querySelector('#single-qty-dec-btn').disabled = (qty <= 1);
+        updatePriceSummary(form, 'single');
+      }
+      // --- Preview Modal Buttons ---
+      if (action === 'orderFromPreview') {
+        SELECTED_PRODUCT = PRODUCTS.find(p => p.id === e.target.closest('[data-product-id]').dataset.productId);
+        closeModal(modal);
+        openModal(renderOrderModal(SELECTED_PRODUCT, 1));
+      }
+      if (action === 'addToCartFromPreview') {
+        const product = PRODUCTS.find(p => p.id === e.target.closest('[data-product-id]').dataset.productId);
+        const existing = CART.find(i => i.id === product.id);
+        if (existing) existing.quantity += 1;
+        else CART.push({ id: product.id, name: product.name, price: product.price, quantity: 1 });
+        updateCartCount();
+        showToast("কার্টে যোগ হয়েছে!", `${product.name} সফলভাবে কার্টে যোগ করা হয়েছে।`);
+        closeModal(modal);
+      }
+    });
+    function updatePriceSummary(form, type) {
+      if (!form) return;
+      let deliveryLocation = form.querySelector('input[name="deliveryLocation"]:checked')?.value;
+      let deliveryCharge = deliveryLocation === 'inside' ? 50 : (deliveryLocation === 'outside' ? 130 : 0);
+      let subtotal;
+      if (type === 'single') {
+        const quantity = parseInt(form.querySelector('#quantity-value').textContent, 10);
+        subtotal = SELECTED_PRODUCT.price * quantity;
+        form.querySelector('#product-subtotal').textContent = `সাবটোটাল: ৳${subtotal}`;
+      } else {
+        subtotal = CART.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        form.querySelector('#cart-subtotal').textContent = `৳${subtotal}`;
+      }
+      const total = subtotal + deliveryCharge;
+      form.querySelector('#delivery-charge').textContent = `৳${deliveryCharge}`;
+      form.querySelector('#total-amount').textContent = `৳${total}`;
+      form.querySelector('#delivery-charge-row').style.display = deliveryCharge > 0 ? 'flex' : 'none';
+    }
+    // --- THEME ---
+    function updateTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      themeIconSun.classList.toggle('hidden', !isDark);
+      themeIconMoon.classList.toggle('hidden', isDark);
+    }
+    themeToggleBtn.addEventListener('click', () => { document.documentElement.classList.toggle('dark'); updateTheme(); });
+    // --- INIT ---
+    renderProducts();
+    updateTheme();
+    updateCartCount();
+  </script>
+</body>
 </html>
